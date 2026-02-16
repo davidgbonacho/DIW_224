@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroGalaxias - Viaje Interestelar</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">AstroGalaxias</div>
+        <nav class="navbar">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="menu">
+                <li><a href="astrogalaxias.html#galaxias">Tipos de Galaxias</a></li>
+                <li><a href="listadovideos.html">Vídeos</a></li>
+                <li><a href="astrogalaxias.html#timeline">Descubrimientos</a></li>
+                <li><a href="astrogalaxias.html#fichas">Datos Técnicos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero hero-small">
+        <h1>Viaje a los Límites del Universo</h1>
+    </section>
+
+    <main class="video-page-content">
+        <section class="video-container">
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/FYOH_54XEJY"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </section>
+
+        <section class="video-description">
+            <h3>Explorando lo Desconocido</h3>
+            <p>
+                Este impresionante viaje visual nos lleva a través de las vastas extensiones del cosmos,
+                revelando la majestuosidad de las galaxias lejanas y los misterios que albergan.
+                Desde los vibrantes viveros estelares hasta los silenciosos vacíos intergalácticos,
+                cada fotograma es un testimonio de la inmensidad y belleza de nuestro universo.
+            </p>
+            <p>
+                A medida que nos adentramos más en el espacio profundo, las estructuras familiares se desvanecen,
+                dando paso a formaciones exóticas y fenómenos cósmicos que desafían nuestra comprensión.
+                La luz de estrellas muertas hace millones de años nos llega ahora, contándonos la historia
+                de un pasado remoto y violento, donde la gravedad y la energía oscura danzan en un equilibrio eterno.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>AstroGalaxias 2025 - DIW_223 - ESIC 2ºDAW</p>
+        <a href="#top">Volver arriba</a>
+    </footer>
+
+    <div id="flecharriba"><a href="#top" class="scroll-top">↑</a></div>
+</body>
+
+<script>
+    document.querySelectorAll('.menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('nav-toggle').checked = false;
+        });
+    });
+</script>
+
+</html>

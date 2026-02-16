@@ -1,0 +1,563 @@
+/* @import url(https://fonts.googleapis.com/css?family=Oswald:300);
+@import url(https://fonts.googleapis.com/css?family=Lato:300); */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Lato:wght@300');
+
+/* ========================================
+   VARIABLES
+   ======================================== */
+:root {
+    --color-primario: #0a1929;
+    --color-secundario: #6a0dad;
+    --color-acento: #ffd700;
+    --espaciado-base: 20px;
+    --radio-bordes: 12px;
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --color-fondo: #0d1b2a;
+    --color-texto: #e0e0e0;
+
+    --contenedor: 1200px;
+}
+
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Lato;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.logo,
+h1,
+h2,
+h3 {
+    font-family: Oswald;
+}
+
+h2 {
+    text-align: center;
+    margin: var(--espaciado-base) 0;
+    color: var(--color-acento);
+    font-size: 2.2em;
+}
+
+/* botón flecha arriba */
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.scroll-top:hover {
+    background: white;
+    color: black;
+}
+
+
+/* ========================================
+   PARTE 1: SELECTORES Y VARIABLES
+   ======================================== */
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #000000, var(--color-primario));
+    padding: var(--espaciado-base);
+    box-shadow: var(--sombra-suave);
+    text-align: right;
+}
+
+header h1,
+.logo {
+    color: var(--color-acento);
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* nav */
+
+header nav ul li {
+    display: inline;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-icon {
+    display: none;
+}
+
+
+/* 1.4 Pseudo-clases de interacción */
+header nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: var(--radio-bordes);
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--color-acento);
+    background-color: rgba(255, 215, 0, 0.1);
+    text-decoration: underline;
+}
+
+header nav a:focus {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 4px;
+}
+
+/* HERO SECTION */
+.hero {
+    /* background: linear-gradient(135deg, var(--color-primario), var(--color-secundario)); */
+    background-image: url(https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    text-align: center;
+    padding: calc(var(--espaciado-base) * 4) var(--espaciado-base);
+    margin-bottom: var(--espaciado-base);
+}
+
+.hero h2 {
+    font-size: 3em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-top: calc(var(--espaciado-base) / 2);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 1.2 Selector hermano adyacente */
+.hero+h2 {
+    margin-top: calc(var(--espaciado-base) * 2);
+}
+
+/* ========================================
+   PARTE 3: GRID LAYOUT
+   ======================================== */
+
+.galeria-galaxias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--espaciado-base);
+    padding: var(--espaciado-base);
+    max-width: var(--contenedor);
+    margin: 0 auto;
+}
+
+/* 1.2 Selector descendiente */
+.galeria-galaxias h3 {
+    color: var(--color-acento);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.galaxia-card {
+    background: rgba(10, 25, 41, 0.6);
+    padding: var(--espaciado-base);
+    border-radius: var(--radio-bordes);
+    box-shadow: var(--sombra-suave);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.galaxia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    background: rgba(10, 25, 41, 0.8);
+}
+
+.galaxia-card p {
+    margin: 10px 0;
+}
+
+.galaxia-card .categoria {
+    display: block;
+    font-size: 0.9em;
+    color: rgba(255, 215, 0, 0.7);
+    margin-top: 10px;
+}
+
+/* 1.3 Selector de atributo */
+/* [class*="premium"] {
+    border: 2px solid var(--color-acento);
+} */
+
+/* ========================================
+   PARTE 2: PSEUDO-CLASES ESTRUCTURALES
+   ======================================== */
+
+/* 2.1 nth-child con even/odd */
+.galaxia-card:nth-child(even) {
+    background: rgba(15, 30, 50, 0.6);
+}
+
+.galaxia-card:nth-child(odd) {
+    background: rgba(10, 25, 41, 0.6);
+}
+
+/* 2.2 nth-child con número específico */
+.galaxia-card:nth-child(3) {
+    border: 3px solid var(--color-secundario);
+}
+
+/* ========================================
+   PARTE 4: FLEXBOX LAYOUT
+   ======================================== */
+
+.timeline-descubrimientos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-base);
+    padding: var(--espaciado-base);
+    max-width: var(--contenedor);
+    margin: 0 auto;
+}
+
+/* 1.2 Selector hijo directo */
+.timeline-descubrimientos>.evento {
+    width: calc((100% - 40px) / 3);
+    /* módulos idénticos*/
+    background: rgba(106, 13, 173, 0.2);
+    padding: calc(var(--espaciado-base) * 0.8);
+    border-radius: var(--radio-bordes);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.evento:hover {
+    transform: scale(1.05);
+    box-shadow: var(--sombra-suave);
+}
+
+.evento h4 {
+    color: var(--color-acento);
+    font-size: 1.8em;
+    margin-bottom: 8px;
+}
+
+.evento h5 {
+    color: var(--color-secundario);
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.evento p {
+    font-size: 0.95em;
+    color: rgba(224, 224, 224, 0.9);
+}
+
+/* 2.3 first-of-type y last-of-type */
+.evento:first-of-type {
+    border-left: 4px solid var(--color-acento);
+}
+
+.evento:last-of-type {
+    border-right: 4px solid #c0c0c0;
+}
+
+/* ========================================
+   PARTE 5: OVERFLOW
+   ======================================== */
+
+.fichas-tecnicas {
+    padding: var(--espaciado-base);
+    max-width: var(--contenedor);
+    margin: 0 auto;
+}
+
+.ficha {
+    background: rgba(10, 25, 41, 0.5);
+    margin-bottom: calc(var(--espaciado-base) * 1.5);
+    padding: var(--espaciado-base);
+    border-radius: var(--radio-bordes);
+    box-shadow: var(--sombra-suave);
+}
+
+.ficha h4 {
+    color: var(--color-acento);
+    font-size: 1.8em;
+    margin-bottom: calc(var(--espaciado-base) / 2);
+}
+
+/* 5.1 Overflow-y en descripciones */
+.descripcion-larga {
+    background: rgba(15, 30, 50, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: var(--espaciado-base);
+    max-height: 200px;
+    overflow-y: scroll;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.descripcion-larga::-webkit-scrollbar {
+    width: 8px;
+}
+
+.descripcion-larga::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.descripcion-larga::-webkit-scrollbar-thumb {
+    background: var(--color-secundario);
+    border-radius: 4px;
+}
+
+.descripcion-larga p {
+    margin-bottom: 12px;
+}
+
+/* 5.2 Overflow-x en tablas */
+.datos-tabla {
+    background: rgba(106, 13, 173, 0.15);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.datos-tabla table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+}
+
+.datos-tabla th,
+.datos-tabla td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.datos-tabla th {
+    background: rgba(106, 13, 173, 0.3);
+    color: var(--color-acento);
+    font-weight: bold;
+}
+
+.datos-tabla td {
+    color: var(--color-texto);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    background: var(--color-primario);
+    padding: calc(var(--espaciado-base) * 1.5);
+    text-align: center;
+    margin-top: calc(var(--espaciado-base) * 2);
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin-bottom: 10px;
+    color: rgba(224, 224, 224, 0.8);
+}
+
+footer a {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 768px) {
+
+    /* flex - eventos */
+    .timeline-descubrimientos>.evento {
+        width: calc((100% - 40px) / 2);
+    }
+
+
+    header {
+        text-align: left;
+    }
+
+    header nav ul li {
+        display: block;
+    }
+
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .nav-toggle-icon {
+        display: block;
+        position: absolute;
+        top: 1.25rem;
+        right: 20px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .nav-toggle-icon span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--color-acento);
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+
+
+
+    /* Transformación a X */
+    #nav-toggle:checked+.nav-toggle-icon span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    #nav-toggle:checked+.nav-toggle-icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #nav-toggle:checked+.nav-toggle-icon span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    .menu {
+        position: fixed;
+        padding-top: 120px;
+        top: 0px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(20, 13, 43);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: left 0.3s ease;
+        font-size: 1.2rem;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    #nav-toggle:checked~.menu {
+        left: 0;
+    }
+
+
+
+    /* Cerrar el menú cuando se hace clic en un enlace */
+    .menu a {
+        display: block;
+    }
+}
+
+/* ========================================
+   PARTE 6: ESTILOS PÁGINA VIDEO
+   ======================================== */
+
+.hero-small {
+    padding: calc(var(--espaciado-base) * 2) var(--espaciado-base);
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-page-content {
+    max-width: var(--contenedor);
+    margin: 0 auto;
+    padding: var(--espaciado-base);
+}
+
+.video-container {
+    width: 100%;
+    margin-bottom: var(--espaciado-base);
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radio-bordes);
+    box-shadow: var(--sombra-suave);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-description {
+    background: rgba(10, 25, 41, 0.6);
+    padding: calc(var(--espaciado-base) * 1.5);
+    border-radius: var(--radio-bordes);
+    box-shadow: var(--sombra-suave);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-description h3 {
+    color: var(--color-acento);
+    font-size: 1.8em;
+    margin-bottom: var(--espaciado-base);
+    border-bottom: 2px solid var(--color-secundario);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.video-description p {
+    margin-bottom: 15px;
+    color: rgba(224, 224, 224, 0.9);
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* ========================================
+   PARTE 7: ESTILOS LISTADO VIDEOS
+   ======================================== */
+
+.galaxia-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radio-bordes);
+    margin-bottom: 10px;
+}
